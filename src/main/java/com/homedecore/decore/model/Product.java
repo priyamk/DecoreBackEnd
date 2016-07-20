@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Product {
 
-	public Supplier getSupplier() {
+	public Supplier getSupplier() {       //getter setter for supplier
 		return supplier;
 	}
 	public void setSupplier(Supplier supplier) {
@@ -85,6 +85,13 @@ public class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
