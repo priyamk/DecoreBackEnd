@@ -60,6 +60,21 @@ public class ProductDAOImpl implements ProductDAO {
 		
 		return null;
 	}
+	
+	@Transactional
+	public List<Product> getByCategory(String id) {
+		String hql = "from Product where category_id='" + id+"'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		
+		@SuppressWarnings("unchecked")
+		List<Product> listProduct = (List<Product>) query.list();
+		
+		if (listProduct != null && !listProduct.isEmpty()) {
+			return listProduct;
+		}
+		
+		return null;
+	}
 
 
 }

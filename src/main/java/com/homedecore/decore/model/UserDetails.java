@@ -2,6 +2,8 @@ package com.homedecore.decore.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,18 +15,14 @@ import org.springframework.stereotype.Component;
 public class UserDetails {
 	
 	@Id
-	@Column(name="id")
-	private String id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	
+	private String username;
 	
 	private String name;
 
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
+	
 
 	public String getName() {
 		return name;
@@ -56,6 +54,14 @@ public class UserDetails {
 
 	public void setContactNumber(String contactNumber) {
 		this.contactNumber = contactNumber;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	@Column(name = "mail_id")

@@ -5,8 +5,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name = "product")
@@ -26,6 +29,16 @@ public class Product {
 	private String description;
 	private double price;
 	
+	@Transient
+    private MultipartFile productImage;
+	
+	 public MultipartFile getProductImage() {
+	        return productImage;
+	    }
+
+	    public void setProductImage(MultipartFile productImage) {
+	        this.productImage = productImage;
+	    }
 	
 	public String getCategory_id() {
 		return category_id;

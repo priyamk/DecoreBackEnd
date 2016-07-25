@@ -1,8 +1,14 @@
 package com.homedecore.decore.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -12,12 +18,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class Category {
 
+	@Id
 	private String id;
 	private String name;
 	private String description;
 	
-	@Id
-	@Column(name = "ID")
+	@OneToMany(mappedBy="category",fetch = FetchType.EAGER)
+	private Set<Product> products;
+	
 	public String getId() {
 		return id;
 	}
@@ -35,6 +43,14 @@ public class Category {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	
+	public Set<Product> getProducts() {
+		return products;
+	}
+	public void setProducts(Set<Product> products) {
+		this.products = products;
 	}
 	
 	

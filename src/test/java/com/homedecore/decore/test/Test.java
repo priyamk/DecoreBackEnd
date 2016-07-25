@@ -17,7 +17,7 @@ public class Test {
 	public Test()
 	{
 		context = new AnnotationConfigApplicationContext();
-		context.scan("com.niit.shopingcart");
+		context.scan("com.homedecore.decore");
 		context.refresh();
 	}
 	
@@ -37,7 +37,7 @@ public class Test {
 		Test t = new Test();
 		
 		User user =(User)  context.getBean("user");
-		user.setId("NIIT");
+		user.setUsername("NIIT");
 		user.setPassword("NIIT");
 		user.setAdmin(true);
 		

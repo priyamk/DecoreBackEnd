@@ -2,6 +2,8 @@ package com.homedecore.decore.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Component;
 public class Supplier {
 	
 	@Id
+	
 	@Column(name="id")
 	private String id;
 	

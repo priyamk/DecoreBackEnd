@@ -15,5 +15,7 @@ public interface ProductDAO {
 
 	public void delete(String id);
 
+	public Object getByCategory(String id);
+
 
 }

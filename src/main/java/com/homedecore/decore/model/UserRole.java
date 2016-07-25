@@ -15,7 +15,7 @@ public class UserRole {
 	@Id
 	private String id;
 	
-	private String name;
+	private String role;
 	
 	@Column(name = "admin")
 	private boolean isAdmin;
@@ -28,20 +28,20 @@ public class UserRole {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public boolean isAdmin() {
 		return isAdmin;
 	}
 
 	public void setAdmin(boolean isAdmin) {
 		this.isAdmin = isAdmin;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 	
 

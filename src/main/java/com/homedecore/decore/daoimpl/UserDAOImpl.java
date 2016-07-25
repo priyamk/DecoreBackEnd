@@ -48,15 +48,15 @@ public class UserDAOImpl implements UserDAO {
 
 
 	@Transactional
-	public void delete(String id) {
+	public void delete(String username) {
 		User user = new User();
-		user.setId(id);
+		user.setUsername(username);
 		sessionFactory.getCurrentSession().delete(user);
 	}
 
 	@Transactional
-	public User get(String id) {
-		String hql = "from User where id=" + "'"+ id+"'";
+	public User get(String username) {
+		String hql = "from User where username=" + "'"+ username+"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")
@@ -70,8 +70,8 @@ public class UserDAOImpl implements UserDAO {
 	}
 	
 	@Transactional
-	public boolean isValidUser(String id, String password, boolean isAdmin) {
-		String hql = "from User where id= '" + id + "' and " + " password ='" + password+"'";
+	public boolean isValidUser(String username, String password, boolean isAdmin) {
+		String hql = "from User where username= '" + username + "' and " + " password ='" + password+"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")
